@@ -1,1 +1,33 @@
-{"description":"R 彩带飘带风格主题：粉→紫→蓝→青→橙渐变，浅色底色，大圆角卡片。基于 harmony 的子主题。","hooks":[{"hook":"static:app.load","method":"init"},{"hook":"filter:admin.header.build","method":"addAdminNavigation"},{"hook":"filter:widgets.getAreas","method":"defineWidgetAreas"},{"hook":"filter:config.get","method":"getThemeConfig"}],"id":"nodebb-theme-iptv","library":"./lib/theme.js","name":"IPTV Ribbon Theme","scripts":["public/client.js","../nodebb-theme-harmony/public/harmony.js"],"staticDirs":{"images":"static/images"},"templates":"templates","theme":true}
+{
+  "description": "R 彩带飘带风格主题：粉→紫→蓝→青→橙渐变，浅色底色，大圆角卡片。基于 harmony 的子主题。",
+  "hooks": [
+    {
+      "hook": "static:app.load",
+      "method": "init"
+    },
+    {
+      "hook": "filter:admin.header.build",
+      "method": "addAdminNavigation"
+    },
+    {
+      "hook": "filter:widgets.getAreas",
+      "method": "defineWidgetAreas"
+    },
+    {
+      "hook": "filter:config.get",
+      "method": "getThemeConfig"
+    }
+  ],
+  "id": "nodebb-theme-r",
+  "library": "./lib/theme.js",
+  "name": "IPTV Ribbon Theme",
+  "scripts": [
+    "public/client.js",
+    "../nodebb-theme-harmony/public/harmony.js"
+  ],
+  "staticDirs": {
+    "images": "static/images"
+  },
+  "templates": "templates",
+  "theme": true
+}
