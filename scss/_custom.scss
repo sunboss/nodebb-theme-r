@@ -221,3 +221,89 @@ footer, #footer, .footer {
     transition: none;
   }
 }
+
+// ============================================================
+// 深色模式（data-bs-theme="dark"，跟随 NodeBB/Bootstrap 切换）
+// 彩带渐变在深色底上保持鲜艳，中性色反转
+// ============================================================
+[data-bs-theme="dark"] {
+  --r-bg: #0f1220;
+  --r-card: #171b2e;
+  --r-text: #e8eaf2;
+  --r-text-2: #9aa3bb;
+  --r-line: rgba(255, 255, 255, .09);
+}
+
+[data-bs-theme="dark"] body {
+  background-color: #0f1220;
+  color: #e8eaf2;
+}
+
+// 顶栏：深色毛玻璃
+[data-bs-theme="dark"] .navbar,
+[data-bs-theme="dark"] nav.navbar,
+[data-bs-theme="dark"] #header-menu {
+  background: rgba(15, 18, 32, .88) !important;
+}
+
+// 卡片：深色底
+[data-bs-theme="dark"] .card {
+  background: #171b2e;
+  border-color: rgba(255, 255, 255, .09);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .35);
+}
+
+// 面包屑：深色底
+[data-bs-theme="dark"] .breadcrumb,
+[data-bs-theme="dark"] ol.breadcrumb,
+[data-bs-theme="dark"] .breadcrumb-container {
+  background: #171b2e;
+  border-color: rgba(255, 255, 255, .09);
+}
+
+// 列表悬停：深色下渐变更淡
+[data-bs-theme="dark"] .topic-list li:hover,
+[data-bs-theme="dark"] li[component="topic"]:hover {
+  background: linear-gradient(135deg, rgba(255,45,120,.08), rgba(139,92,246,.08), rgba(45,127,249,.08));
+}
+
+// 输入框：深色底
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: #1e2338;
+  border-color: rgba(255, 255, 255, .12);
+  color: #e8eaf2;
+}
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: #1e2338;
+  color: #e8eaf2;
+}
+
+// 弹窗：深色底
+[data-bs-theme="dark"] .modal-content {
+  background-color: #171b2e;
+  color: #e8eaf2;
+}
+
+// 下拉菜单：深色底
+[data-bs-theme="dark"] .dropdown-menu {
+  background-color: #1e2338;
+  border-color: rgba(255, 255, 255, .09);
+}
+[data-bs-theme="dark"] .dropdown-item {
+  color: #e8eaf2;
+}
+[data-bs-theme="dark"] .dropdown-item:hover {
+  background-color: rgba(139, 92, 246, .15);
+  color: #fff;
+}
+
+// 分页：深色
+[data-bs-theme="dark"] .pagination .page-link {
+  background-color: #1e2338;
+  border-color: rgba(255, 255, 255, .09);
+  color: #9aa3bb;
+}
+
+// 渐变按钮在深色下保持不变（已经够鲜艳）
