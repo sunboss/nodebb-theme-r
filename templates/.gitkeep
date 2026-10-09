@@ -1,0 +1,2 @@
+# 此目录为空：模板全部继承自 nodebb-theme-harmony。
+# 如需覆盖某个 harmony 模板，把同名 .tpl 文件按相同相对路径放在这里即可。

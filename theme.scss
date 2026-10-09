@@ -1,0 +1,9 @@
+// nodebb-theme-iptv — SCSS entry (imports only, like westgate convention)
+// 1. 让 harmony 的 font 资源路径指向本主题
+$font-path: "./plugins/nodebb-theme-iptv";
+// 2. 继承 harmony 全部样式
+@import "../nodebb-theme-harmony/theme";
+// 3. R 彩带设计 token
+@import "scss/variables";
+// 4. 本主题的视觉覆盖层（只做视觉，不动功能）
+@import "scss/custom";

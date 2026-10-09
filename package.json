@@ -1,0 +1,1 @@
+{"author":"sunboss","dependencies":{},"description":"R 彩带飘带风格 NodeBB 主题（对标 iptv.1234r.com 设计语言），基于 nodebb-theme-harmony 的子主题","engines":{"node":">=18.0.0"},"license":"MIT","main":"lib/theme.js","name":"nodebb-theme-iptv","nbbpm":{"compatibility":"^4.0.0"},"repository":{"type":"git","url":"https://github.com/sunboss/nodebb-theme-iptv.git"},"version":"1.0.0"}

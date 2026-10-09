@@ -1,0 +1,38 @@
+// ============================================================
+// nodebb-theme-iptv — 设计 token
+// 取自 R 彩带 logo 与 iptv.1234r.com（rtv-ui.css）
+// 渐变方向：粉 → 紫 → 蓝 → 青 → 橙
+// ============================================================
+
+// —— 品牌色 ——
+$r-pink:   #ff2d78;   // 品红/粉
+$r-purple: #8b5cf6;   // 紫
+$r-blue:   #2d7ff9;   // 蓝
+$r-cyan:   #00c8f0;   // 青
+$r-orange: #ff9500;   // 橙
+
+// —— 渐变 ——
+$r-gradient: linear-gradient(135deg, #ff2d78 0%, #8b5cf6 32%, #2d7ff9 64%, #00c8f0 100%);
+$r-gradient-wide: linear-gradient(120deg, #ff2d78 0%, #b45cf6 25%, #8b5cf6 40%, #2d7ff9 62%, #00c8f0 82%, #ffb020 100%);
+$r-gradient-soft: linear-gradient(135deg, rgba(255, 45, 120, .10), rgba(139, 92, 246, .10), rgba(45, 127, 249, .10), rgba(0, 200, 240, .10));
+
+// —— 中性色（浅色底，突出彩带） ——
+$r-bg:   #f6f7fc;
+$r-card: #ffffff;
+$r-text: #191d27;
+$r-text-2: #5b6478;
+$r-line: rgba(23, 28, 48, .09);
+
+// —— 圆角（iptv 风格偏大，论坛场景略收敛） ——
+$r-radius-sm: 10px;
+$r-radius:    16px;
+$r-radius-lg: 22px;
+$r-radius-pill: 999px;
+
+// —— 阴影 ——
+$r-shadow-card: 0 2px 6px rgba(23, 28, 48, .05), 0 12px 32px rgba(23, 28, 48, .08);
+$r-shadow-btn: 0 6px 20px rgba(139, 92, 246, .35), 0 3px 10px rgba(45, 127, 249, .22);
+
+// —— 字体（与 iptv 站一致） ——
+$r-font: "MiSans", "HarmonyOS Sans SC", "PingFang SC", -apple-system, BlinkMacSystemFont,
+         "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif;

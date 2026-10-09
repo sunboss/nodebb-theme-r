@@ -1,0 +1,223 @@
+// ============================================================
+// nodebb-theme-iptv — 视觉覆盖层
+// 原则：只做视觉（颜色/圆角/阴影/字体），不动布局与功能。
+// 选择器写得尽量宽容：命中不到就跳过，不报错、不破坏。
+// 基于默认浅色 skin 调优；深色 skin 下渐变点缀依然可用。
+// ============================================================
+
+:root {
+  --r-pink: #{$r-pink};
+  --r-purple: #{$r-purple};
+  --r-blue: #{$r-blue};
+  --r-cyan: #{$r-cyan};
+  --r-orange: #{$r-orange};
+  --r-gradient: #{$r-gradient};
+  --r-gradient-wide: #{$r-gradient-wide};
+  --r-bg: #{$r-bg};
+  --r-text: #{$r-text};
+}
+
+// ---------- 全局 ----------
+body {
+  background-color: $r-bg;
+  font-family: $r-font;
+  color: $r-text;
+}
+
+// ---------- 顶栏 ----------
+// 白底毛玻璃 + 底部彩带渐变细线
+.navbar, nav.navbar, #header-menu {
+  background: rgba(255, 255, 255, .88) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: none !important;
+  position: relative;
+}
+.navbar::after, nav.navbar::after, #header-menu::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: $r-gradient-wide;
+}
+
+// 站点标题：渐变字
+.navbar-brand, .navbar-brand .forum-title, #header-menu .forum-title {
+  font-weight: 800;
+  letter-spacing: .02em;
+  background: linear-gradient(100deg, #f01e6e 0%, #8b5cf6 35%, #2d7ff9 65%, #00a8d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+// 顶栏 logo 图片：圆角 + 轻微阴影
+.navbar-brand img, #header-menu .navbar-brand img {
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, .25);
+}
+
+// ---------- 按钮 ----------
+// 主按钮：彩带渐变
+.btn-primary, .btn.btn-primary {
+  background: $r-gradient;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: $r-shadow-btn;
+  transition: filter .18s ease, transform .18s ease;
+}
+.btn-primary:hover, .btn.btn-primary:hover,
+.btn-primary:focus, .btn.btn-primary:focus {
+  background: $r-gradient;
+  border: none;
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  color: #fff;
+}
+.btn-primary:active, .btn.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(.97);
+}
+
+// 次要按钮：圆角统一
+.btn {
+  border-radius: 12px;
+}
+.btn-sm {
+  border-radius: 10px;
+}
+
+// ---------- 卡片 ----------
+.card {
+  border: 1px solid $r-line;
+  border-radius: $r-radius;
+  box-shadow: $r-shadow-card;
+  background: $r-card;
+}
+
+// 分类/话题列表行：悬停给淡渐变底
+[component="category/topic"] , .topic-list li, li[component="topic"] {
+  border-radius: 12px;
+}
+.topic-list li:hover, li[component="topic"]:hover,
+.categories-list li:hover, li[component="category"] > .card:hover {
+  background: linear-gradient(135deg, rgba(255,45,120,.05), rgba(139,92,246,.05), rgba(45,127,249,.05));
+}
+
+// ---------- 徽章 / 标签 ----------
+.badge {
+  border-radius: $r-radius-pill;
+  font-weight: 600;
+}
+.tag, a.tag, .tags .badge {
+  border-radius: $r-radius-pill;
+}
+
+// ---------- 面包屑 ----------
+.breadcrumb, ol.breadcrumb, .breadcrumb-container {
+  background: #fff;
+  border: 1px solid $r-line;
+  border-radius: $r-radius-pill;
+  box-shadow: 0 2px 8px rgba(23, 28, 48, .05);
+}
+
+// ---------- 分页 ----------
+.pagination .page-link {
+  border-radius: 10px !important;
+  margin: 0 2px;
+  border: 1px solid $r-line;
+  color: $r-text-2;
+}
+.pagination .page-item.active .page-link {
+  background: $r-gradient;
+  border: none;
+  color: #fff;
+  box-shadow: $r-shadow-btn;
+}
+
+// ---------- 表单 ----------
+.form-control:focus, .form-select:focus {
+  border-color: $r-purple;
+  box-shadow: 0 0 0 .2rem rgba(139, 92, 246, .18);
+}
+.form-control, .form-select {
+  border-radius: 12px;
+}
+
+// ---------- 弹窗 / 下拉 / 提示 ----------
+.modal-content {
+  border-radius: $r-radius-lg;
+  border: none;
+  box-shadow: 0 24px 70px rgba(23, 28, 48, .22);
+}
+.dropdown-menu {
+  border-radius: 14px;
+  border: 1px solid $r-line;
+  box-shadow: $r-shadow-card;
+}
+.alert {
+  border-radius: 14px;
+  border: none;
+}
+
+// ---------- 回复编辑器 ----------
+.composer, #composer {
+  border-radius: $r-radius-lg $r-radius-lg 0 0;
+  box-shadow: 0 -12px 44px rgba(23, 28, 48, .14);
+}
+.composer .composer-container {
+  border-radius: $r-radius-lg $r-radius-lg 0 0;
+}
+
+// ---------- 进度条 ----------
+.progress {
+  border-radius: $r-radius-pill;
+  background: rgba(23, 28, 48, .08);
+}
+.progress-bar {
+  background: $r-gradient;
+}
+
+// ---------- 标题点缀 ----------
+// 一级标题（分类页/话题页）：文字保持深色，左侧加彩带竖条
+h1 .page-title, .category-header h1, .topic-header h1 {
+  font-weight: 800;
+}
+
+// ---------- 页脚 ----------
+footer, #footer, .footer {
+  border-top: 3px solid transparent;
+  border-image: $r-gradient-wide 1;
+  background: #fff;
+}
+
+// ---------- 移动端 ----------
+@media (max-width: 767.98px) {
+  .card {
+    border-radius: 14px;
+  }
+  // 顶栏在小屏保持紧凑
+  .navbar, nav.navbar, #header-menu {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+  // 避免内容横向溢出
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  // 面包屑小屏允许横滑
+  .breadcrumb, ol.breadcrumb {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+// ---------- 减少动态偏好 ----------
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary, .btn.btn-primary {
+    transition: none;
+  }
+}
